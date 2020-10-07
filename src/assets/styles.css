@@ -1,14 +1,43 @@
+:root {
+  --buttonColour: rgb(0, 119, 255);
+  --buttonTextColour: rgb(255, 255, 255);
+  --linkColour: rgb(0, 119, 255);
+  --offMain: rgb(115, 180, 255);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.loader{
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+html {
+  height: 100%;
+}
+
+.topsquare{
+  height: 30vw;
+  width: 100vw;
+  background-color: red;
+}
+
 .navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow: hidden;
-    background-color: #333;
-  }
-  
-.navbar > * {
-    float: left;
-  }
+    background-color: var(--buttonColour);
+    margin-bottom: 1rem;
+}
   
 .navbar > * {
     display: block;
@@ -16,9 +45,134 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"], button {
+  border-radius: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;  
+}
+
+input[type="text"], input[type="password"]{
+  padding-left: 1rem;
+  border: 1px solid grey;
+  background-color: rgb(231, 231, 231);
+  margin-top: 0.5rem;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+  background-color: white;
+}
+
+*:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: var(--buttonColour);
+  color: var(--buttonTextColour);
+  margin-top: 0.5rem;
+}
+
+input[type="file"] {
+  float: left;
+}
+
+.routeLink
+{
+  text-decoration: none;
+  color: var(--linkColour)
+}
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textlabel{
+  margin-bottom: 1rem;
+}
+
+.fileWrapper
+{
+  align-content: center;
+  border: 1px solid grey;
+  padding: 5px;
+  border-radius: 32rem;
+  padding-left: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.inverseButton{
+  background-color: white !important;
+  border: 1px solid var(--buttonColour) !important;
+  color: var(--buttonColour) !important;
+}
+
+ /* aniamted background*/
+.movingGradient
+{
+  background: linear-gradient(270deg,rgb(59, 190, 136) 0%, rgba(0,95,181,1) );
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+/* aniamted background*/
+
+/*This site is designed with mobile in mind, here is the desktop css*/
+
+@media only screen and (min-width: 700px) {
+  .topsquare{
+    height: 10vh;
   }
-  
-.navbar > *:hover {
-    background-color: rgb(153, 153, 153);
+  .FormContainer{
+    max-width: 20%;
+  }
+  .inverseButton:hover{
+    background-color: var(--buttonColour) !important;
+    color: var(--buttonTextColour) !important;
+  }
+  button:hover {
+    color: var(--buttonColour);
+    background-color: var(--buttonTextColour);
+    border: 1px solid grey;
+
+  }
+  .navbar > *:hover {
+    background-color: rgb(255, 255, 255);
     color: black;
   }
+}
