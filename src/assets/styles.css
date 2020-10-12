@@ -5,6 +5,8 @@
   --offMain: rgb(115, 180, 255);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
   margin: 0px;
   padding: 0px;
@@ -118,6 +120,10 @@ input[type="file"] {
   margin-bottom: 3rem;
 }
 
+.logo{
+  display: none;
+}
+
 .inverseButton{
   background-color: white !important;
   border: 1px solid var(--buttonColour) !important;
@@ -157,6 +163,13 @@ input[type="file"] {
 @media only screen and (min-width: 700px) {
   .topsquare{
     height: 10vh;
+  }
+  .logo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 100px;
+    line-height: 105px;
+    color: white;
+    display: initial !important;
   }
   .FormContainer{
     max-width: 20%;

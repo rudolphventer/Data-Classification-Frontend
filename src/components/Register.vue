@@ -1,6 +1,7 @@
 <template>
   <div >
     <div class="topsquare movingGradient">
+      <div class="logo">Classy</div>
     </div>
   <div class="FormContainer" >
     <div class="title">Register</div>

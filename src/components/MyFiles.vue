@@ -6,7 +6,8 @@
         <!-- Edit component is called when the openFile var is truthy, it should contain the ID which will be passed to the edit component-->
         <Edit v-if="openFile == item._id" v-bind:givenID="openFile"></Edit>
     </div>
-     <h3 v-if="Files.length == 0">You have not uploaded any files yet 😢</h3>
+     <h3 v-if="!fetching && Files.length == 0">You have not uploaded any files yet 😢</h3>
+     <img v-if="fetching" src="/loader.gif" width="50%" style="margin-left: auto; margin-right: auto">
      
   </div>
 </template>
@@ -22,7 +23,8 @@ export default {
   data () {
     return{
       Files: [],
-      openFile: ''
+      openFile: '',
+      fetching: true
     }
   },
   created() {
@@ -32,7 +34,9 @@ export default {
     // Gets files uploaded by the current user, the user is identified by JWT on API side
     GetFiles: async function ()
     {
+      this.fetching = true;
       var files = await axios.post(process.env.VUE_APP_API_URL+"/getall" , {}, {headers: {'authorization': 'Bearer '+localStorage.jwt}})
+      this.fetching = false;
       this.Files = files.data.data.reverse(); //Just fixing the order of the data to keep newest first
     },
     //Called when a file is clicked, opens the edit component for that ID

@@ -3,6 +3,7 @@
     <!-- 
       Navbar checks if user is authed before displaying itself
     -->
+
     <ul v-if="isAuthed" id="nav" class="navbar movingGradient">
       <router-link style="float: left;" v-if="isAuthed" to="/upload">Upload</router-link>
       <router-link style="float: left;" v-if="isAuthed" to="/myfiles">My Uploads</router-link>
