@@ -6,7 +6,7 @@
 
   
 
-My name is Rudolph Venter and Classy is my text classification website front-end. Please [take a look!](http://classy-frontend.s3-website.eu-central-1.amazonaws.com)
+My name is Rudolph Venter and Classy is my text classification website front-end. Available at (http://classy-frontend.s3-website.eu-central-1.amazonaws.com) or (classy.rudolphventer.me)
 
 
 ## --🧱--The Stack--🧱--
