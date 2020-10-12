@@ -2,7 +2,7 @@
   
   
 
-# 🏛 Welcome to my Classy! 🏛
+# 🏛 Welcome to Classy! 🏛
 
   
 
