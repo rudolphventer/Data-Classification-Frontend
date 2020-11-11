@@ -22,7 +22,7 @@ export default {
   created ()
   {
     //Checking if user is logged in
-    if(!this.checkJWT())
+    if(this.checkJWT())
     this.$router.push("/upload")
   },
   data() {
@@ -73,8 +73,9 @@ export default {
         {
           return false;
         }
+        return true;
       }
-      return true;
+      return false;
     }
   }
 }

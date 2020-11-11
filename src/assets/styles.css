@@ -162,7 +162,7 @@ input[type="file"] {
 
 @media only screen and (min-width: 700px) {
   .topsquare{
-    height: 10vh;
+    height: 6rem;
   }
   .logo{
     font-family: 'Bebas Neue', cursive;

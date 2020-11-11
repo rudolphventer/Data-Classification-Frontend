@@ -32,6 +32,11 @@ export default {
   created: function () {
     //Check auth on pagelaod
     this.checkAuth();
+    console.log("Authe1d:"+this.isAuthed)
+    if(!this.isAuthed)
+    {
+      this.$router.push("/");
+    }
     this.PingAPI();
   },
   watch:{
@@ -55,10 +60,12 @@ export default {
         catch(err)
         {
           this.isAuthed = false;
+          console.log("Authed:"+this.isAuthed)
           return
         }
         if (Date.now() >= exp * 1000) {
           this.isAuthed = false;
+          console.log("Authed:"+this.isAuthed)
           return
         }
         this.isAuthed = true;
